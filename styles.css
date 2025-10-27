@@ -13,25 +13,22 @@ body {
 }
 
 #player {
-  width: 40px;
-  height: 60px;
+  width: 80px;
+  height: 120px;
   background: #ffdd55;
   position: absolute;
   bottom: 20px;
   left: 50px;
   border-radius: 4px;
+  background-image: url('player.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-#controls {
+#left {
   position: fixed;
   bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 20px;
-}
-
-#controls button {
+  left: 20px;
   width: 60px;
   height: 60px;
   font-size: 30px;
@@ -39,8 +36,34 @@ body {
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.3);
   color: #fff;
-  touch-action: none; /* prevent mobile scrolling */
+  touch-action: none;
 }
-#controls button:active {
-  background: rgba(255, 255, 255, 0.6);
+
+#right {
+  position: fixed;
+  bottom: 20px;
+  left: 100px; /* adjust distance from left */
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  touch-action: none;
 }
+
+#jump {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  touch-action: none;
+}
+

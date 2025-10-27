@@ -5,39 +5,37 @@ const speed = 4;
 const keys = {};
 let isJumping = false;
 let velocityY = 0;
-const jumpStrength = 12;
+const jumpStrength = 15;
 const gravity = 0.5;
 
-// Track key presses
-window.addEventListener('keydown', (e) => keys[e.key] = true);
-window.addEventListener('keyup', (e) => keys[e.key] = false);
-const leftBtn = document.getElementById('left');
-const rightBtn = document.getElementById('right');
-const jumpBtn = document.getElementById('jump');
-
-
-// Initialize player position if missing
+// Initialize player position
 player.style.left = player.style.left || '50px';
 player.style.bottom = player.style.bottom || '20px';
 
-// Game loop
+// Track keys
+window.addEventListener('keydown', (e) => keys[e.key] = true);
+window.addEventListener('keyup', (e) => keys[e.key] = false);
+
 function gameLoop() {
-    let left = parseInt(player.style.left) || 50;
+    let left = parseFloat(player.style.left);
+    let bottom = parseFloat(player.style.bottom);
 
-    if (keys['ArrowLeft'] || keys['a'] || keys['A']) {
-        left -= speed;
-    }
-    if (keys['ArrowRight'] || keys['d'] || keys['D']) {
-        left += speed;
-    }
+    // Horizontal movement
+    if (keys['ArrowLeft'] || keys['a'] || keys['A']) left -= speed;
+    if (keys['ArrowRight'] || keys['d'] || keys['D']) left += speed;
 
+    // Clamp edges
+    const gameWidth = game.clientWidth;
+    left = Math.max(0, Math.min(left, gameWidth - player.offsetWidth));
+
+    // Jump
     if ((keys['ArrowUp'] || keys['w'] || keys['W'] || keys[' ']) && !isJumping) {
         velocityY = jumpStrength;
         isJumping = true;
     }
 
+    // Gravity
     velocityY -= gravity;
-    let bottom = parseFloat(player.style.bottom) || 20;
     bottom += velocityY;
 
     if (bottom <= 20) {
@@ -46,26 +44,12 @@ function gameLoop() {
         isJumping = false;
     }
 
-    const gameWidth = game.clientWidth;
-    if (left < 0) left = 0;
-    if (left > gameWidth - player.offsetWidth) left = gameWidth - player.offsetWidth;
-
+    // Apply positions
     player.style.left = left + 'px';
     player.style.bottom = bottom + 'px';
 
-    requestAnimationFrame(gameLoop); // repeat
+    requestAnimationFrame(gameLoop);
 }
 
-// Start the loop
+// Start game loop
 requestAnimationFrame(gameLoop);
-
-leftBtn.addEventListener('touchstart', () => keys['ArrowLeft'] = true);
-leftBtn.addEventListener('touchend',   () => keys['ArrowLeft'] = false);
-
-rightBtn.addEventListener('touchstart', () => keys['ArrowRight'] = true);
-rightBtn.addEventListener('touchend',   () => keys['ArrowRight'] = false);
-
-jumpBtn.addEventListener('touchstart', () => {
-  if (!isJumping) velocityY = jumpStrength;
-  isJumping = true;
-});
