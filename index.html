@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>The Game</title>
     <meta name="description" content="The Game website.">
-
-    <!-- <link rel="icon" href="" type="image/png"> -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <canvas id="gameCanvas"></canvas>
-    <script src="script.js"></script>
+    <div id="game">
+        <div id="player"></div>
+    </div>
+    <div id="controls">
+        <button id="left">◀</button>
+        <button id="jump">▲</button>
+        <button id="right">▶</button>
+    </div>
+    <script src="main.js"></script>
 </body>
+
+</html>

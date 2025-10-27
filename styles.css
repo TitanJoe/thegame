@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  background: #222;
+  overflow: hidden;
+}
+
+#game {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(#66aaff, #3377cc);
+  position: relative;
+  overflow: hidden;
+}
+
+#player {
+  width: 40px;
+  height: 60px;
+  background: #ffdd55;
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+  border-radius: 4px;
+}
+
+#controls {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+}
+
+#controls button {
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  touch-action: none; /* prevent mobile scrolling */
+}
+#controls button:active {
+  background: rgba(255, 255, 255, 0.6);
+}
