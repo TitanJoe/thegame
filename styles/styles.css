@@ -1,0 +1,9 @@
+body {
+      margin: 0;
+      overflow: hidden;
+      background: #87CEEB; /* sky blue */
+    }
+canvas {
+      display: block;
+      background: #4EC04E; /* ground green */
+    }
