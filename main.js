@@ -53,3 +53,27 @@ function gameLoop() {
 
 // Start game loop
 requestAnimationFrame(gameLoop);
+
+// --- Additions for the 01/11/2025 12:30 ---
+
+// --- Mobile touch controls ---
+document.getElementById('left').addEventListener('touchstart', () => {
+  keys['ArrowLeft'] = true;
+});
+document.getElementById('left').addEventListener('touchend', () => {
+  keys['ArrowLeft'] = false;
+});
+
+document.getElementById('right').addEventListener('touchstart', () => {
+  keys['ArrowRight'] = true;
+});
+document.getElementById('right').addEventListener('touchend', () => {
+  keys['ArrowRight'] = false;
+});
+
+document.getElementById('jump').addEventListener('touchstart', () => {
+  if (!isJumping) {
+    velocityY = jumpStrength;
+    isJumping = true;
+  }
+});

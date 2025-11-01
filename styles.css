@@ -67,3 +67,8 @@ body {
   touch-action: none;
 }
 
+button:active {
+  transform: scale(0.9);
+  background: rgba(255, 255, 255, 0.5);
+}
+
