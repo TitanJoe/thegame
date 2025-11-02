@@ -4,20 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Game</title>
-    <meta name="description" content="The Game website.">
-    <link rel="stylesheet" href="styles.css">
+    <title>Underground Adventures</title>
+    <meta name="description" content="Underground Adventures website.">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS -->
 </head>
 
 <body>
-    <div id="game">
-        <div id="player"></div>
+    <!-- Controls menu -->
+    <div id="controls-menu">
+        <h1>Underground Adventures</h1>
+        <p>Choose your control type:</p>
+        <div id="menu-btns">
+            <button id="keyboard-btn">Keyboard</button>
+            <button id="touch-btn">Touch</button>
+        </div>
     </div>
-    <div id="controls">
-        <button id="left">&#x25C0;</button>
-        <button id="jump">&#x25B2;</button>
-        <button id="right">&#x25B6;</button>
+
+    <!-- Game area -->
+    <div id="viewport"> <!-- Camera view -->
+        <div id="game">
+            <div id="player"></div>
+        </div>
     </div>
+
+    <!-- touch buttons -->
+    <div id="touch-controls">
+        <button id="move-left-btn">&#x25C0;</button>
+        <button id="jump-btn">&#x25B2;</button>
+        <button id="move-right-btn">&#x25B6;</button>
+    </div>
+
+    <!-- Link to javascript -->
     <script src="main.js"></script>
 </body>
 

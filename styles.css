@@ -1,21 +1,72 @@
 body {
   margin: 0;
-  background: #222;
   overflow: hidden;
+  background: #222;
+}
+
+#controls-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  text-align: center;
+}
+
+#controls-menu h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+#controls-menu p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+#menu-btns button {
+  margin: 10px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #3377cc;
+  color: white;
+  transition: transform 0.2s, background 0.2s;
+}
+
+#menu-btns button:hover {
+  background: #66aaff;
+  transform: scale(1.05);
+}
+
+#viewport {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
 
 #game {
-  width: 100vw;
+  width: 5000px;
   height: 100vh;
-  background: linear-gradient(#66aaff, #3377cc);
-  position: relative;
-  overflow: hidden;
+  position: absolute;
+  left: 0;
+  background: url('background.png') repeat-x;
+  background-size: auto 100%;
+  background-position: bottom;
 }
 
 #player {
   width: 80px;
   height: 120px;
-  background: #ffdd55;
   position: absolute;
   bottom: 20px;
   left: 50px;
@@ -25,7 +76,7 @@ body {
   background-repeat: no-repeat;
 }
 
-#left {
+#move-left-btn {
   position: fixed;
   bottom: 20px;
   left: 20px;
@@ -39,10 +90,10 @@ body {
   touch-action: none;
 }
 
-#right {
+#move-right-btn {
   position: fixed;
   bottom: 20px;
-  left: 100px; /* adjust distance from left */
+  left: 100px;
   width: 60px;
   height: 60px;
   font-size: 30px;
@@ -53,7 +104,7 @@ body {
   touch-action: none;
 }
 
-#jump {
+#jump-btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -71,4 +122,3 @@ button:active {
   transform: scale(0.9);
   background: rgba(255, 255, 255, 0.5);
 }
-
