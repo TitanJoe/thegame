@@ -1,11 +1,16 @@
-body {
+/* Start 03/11/2025 */
+/* Target: screen clipping glitches */
+
+html, body {
   margin: 0;
+  padding: 0;
+  height: 100%;
   overflow: hidden;
-  background: #222;
+  touch-action: none;
+  background: #000;
 }
 
-/* Start 03/11/2025 */
-/* Target: touch control glitches */
+/* End 03/11/2025 */
 
 #touch-controls button {
   -webkit-tap-highlight-color: transparent;
@@ -19,8 +24,6 @@ body {
 #controls button:focus {
   outline: none;
 }
-
-/* End 03/11/2025 */
 
 #controls-menu {
   position: fixed;
@@ -67,14 +70,14 @@ body {
 
 #viewport {
   width: 100vw;
-  height: 100vh;
+  height: 100dvh; /* Added dynamic view hight for search bars */
   overflow: hidden;
   position: relative;
 }
 
 #game {
   width: 5000px;
-  height: 100vh;
+  height: 100dvh; /* Added dynamic view hight for search bars */
   position: absolute;
   left: 0;
   background: url('background.png') repeat-x;
