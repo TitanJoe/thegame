@@ -4,6 +4,24 @@ body {
   background: #222;
 }
 
+/* Start 03/11/2025 */
+/* Target: touch control glitches */
+
+#touch-controls button {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+#controls button:focus {
+  outline: none;
+}
+
+/* End 03/11/2025 */
+
 #controls-menu {
   position: fixed;
   top: 0;

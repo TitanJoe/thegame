@@ -1,3 +1,12 @@
+// Start 03/11/2025
+// Target: touch control glitches
+const buttons = document.querySelectorAll('#touch-controls button');
+buttons.forEach(btn => {
+  btn.addEventListener('touchstart', e => e.preventDefault());
+  btn.addEventListener('touchend', e => e.preventDefault());
+});
+// End 03/11/2025
+
 // find and track the html elements
 const player = document.getElementById('player');
 const game = document.getElementById('game');
